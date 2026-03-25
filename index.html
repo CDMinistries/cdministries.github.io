@@ -122,30 +122,33 @@
         <!-- Add more posts by duplicating the block above -->
     </section>
 
-
-<section id="donate" style="margin-top:50px;">
+<section id="donate" style="margin-top: 50px;">
   <h2>Support the Ministry</h2>
   <p>
-    If you feel led to support this ministry, your generosity is deeply appreciated. 
+    If you feel led to support this ministry, your generosity is deeply appreciated.
     Your donation helps spread the Gospel and support ongoing missions.
   </p>
 
-  <!-- PayPal Hosted Donate Button -->
-  https://www.paypal.com/donate
-    <input type="hidden" name="hosted_button_id" value="35B68Y9ED7A26" />
-    <input type="hidden" name="currency_code" value="USD" />
+  <!-- PayPal Donate SDK -->
+  https://www.paypal.com/donate/sdk.js?currency=USD
+  </script>
 
-    <!-- Styled to match your site's warm/traditional look -->
-    <button type="submit" class="donate" style="border:0; cursor:pointer;">
-      Donate via PayPal
-    </button>
-  </form>
+  <div id="paypal-donate-button-container" style="text-align:center; margin-top:20px;"></div>
 
-  <p style="text-align:center; margin-top:12px; font-size:0.9rem; color:#6b5a44;">
-    If the button doesn’t open, use this direct link:
-    https://www.paypal.com/donate/?hosted_button_id=35B68Y9ED7A26Donate via PayPal</a>
-  </p>
+  <script>
+    PayPal.Donation.Button({
+      env: 'production',
+      hosted_button_id: '', // Leave empty when using business/merchant ID
+      business: 'AcaUXMcTyMsb36QereOtseT2fqyqysbNe9iGcu_CIsVOO3C4qRPlIGqRPQOx2kGrzqOZPJZZwJW7untt',
+      image: {
+        src: 'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
+        alt: 'Donate with PayPal button',
+        title: 'PayPal - The safer, easier way to pay online!'
+      }
+    }).render('#paypal-donate-button-container');
+  </script>
 </section>
+``
 
 </div>
 
